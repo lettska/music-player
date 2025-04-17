@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>What's up world I'm HarryO Ylbc <br> I'm an artist from Lenox, GA</h1>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div id="login-section">
+                <h3>Admin Login</h3>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+                <button id="logout-btn" class="logout-btn" style="display: none;">Logout</button>
+            </div>
+            
+            <div class="upload-section" style="display: none;">
+                <h3>Add New Song</h3>
+                <form id="upload-form">
+                    <div class="form-group">
+                        <label for="song-file">Song File:</label>
+                        <input type="file" id="song-file" accept="audio/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cover-image">Cover Image:</label>
+                        <input type="file" id="cover-image" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="song-name">Song Name:</label>
+                        <input type="text" id="song-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="artist-name">Artist Name:</label>
+                        <input type="text" id="artist-name" required>
+                    </div>
+                    <button type="submit" class="upload-btn">Upload Song</button>
+                </form>
+            </div>
+            <div class="playlist-section">
+                <h3>Your Playlist</h3>
+                <ul id="playlist">
+                    <!-- Songs will be added here dynamically -->
+                </ul>
+            </div>
+        </aside>
+
+        <main class="music-player">
+            <div class="music-player-container">
+                <div class="song-image">
+                    <img src="https://placehold.co/300x300" alt="Song Cover" id="cover">
+                </div>
+                <div class="song-details">
+                    <h2 id="song-title">Song Title</h2>
+                    <p id="song-artist">Artist Name</p>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="time-stamps">
+                        <span id="current-time">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="prev" class="control-btn">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button id="play" class="control-btn play-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="next" class="control-btn">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+                <div class="volume-container">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Music Player. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
